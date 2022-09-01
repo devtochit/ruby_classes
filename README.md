@@ -8,6 +8,19 @@
 
 - **Languages & Technologies:**
   - Ruby
+  
+   ### Clone this repository
+
+```bash
+$ git clone git@github.com:HeDevedUp/OOP-School-Library.git
+$ cd OOP-School-Library
+```
+
+### Run project
+
+```command prompt - irb
+$ irb
+```
 
 ## Authors
 
