@@ -7,6 +7,7 @@ class Person < Nameable
   attr_reader :id
 
   def initialize(age:, name: 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -31,6 +32,6 @@ end
 person = Person.new(age: 22, name: '   maximilianus   ')
 puts person.correct_name
 trimmed_person = TrimmerDecorator.new(person)
-puts trimmed_person.correct_name
+puts trimmed_person.correct_name 
 capitalized_trimmed_person = CapitalizeDecorator.new(trimmed_person)
 puts capitalized_trimmed_person.correct_name
