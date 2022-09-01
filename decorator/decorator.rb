@@ -1,4 +1,3 @@
-
 require_relative '../nameable'
 
 class Decorator < Nameable
@@ -12,3 +11,4 @@ class Decorator < Nameable
   def correct_name
     @nameable.correct_name
   end
+end
