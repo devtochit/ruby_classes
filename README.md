@@ -11,7 +11,7 @@
 
 ## Authors
 
-👤 ** J Uzoma **
+👤 ** JESSE  Uzoma **
 
 - GitHub: [@HedevedUp](https://github.com/HeDevedUp)
 - Twitter: [devtochi](https://twitter.com/devtochi)
