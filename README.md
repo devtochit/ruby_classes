@@ -8,7 +8,7 @@
 
 - **Languages & Technologies:**
   - Ruby
-  
+
    ### Clone this repository
 
 ```bash
@@ -24,7 +24,7 @@ $ irb
 
 ## Authors
 
-👤 ** JESSE  Uzoma **
+👤 **Jesse Uzoma **
 
 - GitHub: [@HedevedUp](https://github.com/HeDevedUp)
 - Twitter: [devtochi](https://twitter.com/devtochi)
