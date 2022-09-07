@@ -12,4 +12,3 @@ require_relative './app'
       Enter your option here:"
   end
 
- 
