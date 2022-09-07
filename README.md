@@ -24,9 +24,10 @@ $ irb
 
 ## Authors
 
-👤 **Jesse Uzoma **
+👤 **Jesse Uzoma**
+👤 **Brenda Wihogora**
 
-- GitHub: [@HedevedUp](https://github.com/HeDevedUp)
+- GitHub: [@HedevedUp](https://github.com/HeDevedUp/ruby_classes/)
 - Twitter: [devtochi](https://twitter.com/devtochi)
 - LinkedIn: [uzoma ](https://linkedin.com/in/jeuzoma/)
 

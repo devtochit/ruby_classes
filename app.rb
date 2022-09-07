@@ -1,10 +1,9 @@
-# rubocop:disable Metrics/CyclomaticComplexity
-
 require './book'
 require './person'
 require './rental'
 require './student'
 require './teacher'
+
 class App
   attr_reader :books, :people, :rentals
 
@@ -16,47 +15,16 @@ class App
 
   puts 'Welcome to School Library App!'
 
-  def init
-    puts "Please choose an option by entering a number:
-        1 - List all books
-        2 - List all people
-        3 - Create a person
-        4 - Create a book
-        5 - Create a rental
-        6 - List all rentals for a given person ID
-        7 - Exit
-
-      Enter your option here:"
-    option = gets.chomp.to_i
-    run_option(option)
-  end
-
-  def run_option(option)
-    case option
-    when 1 then list_books
-    when 2 then list_people
-    when 3 then create_person
-    when 4 then create_book
-    when 5 then create_rental
-    when 6 then list_rentals
-    when 7 then quit_app
-    else p 'Please enter a valid option, number from 1 to 7'
-         init
-    end
-  end
-
   def list_books
     puts 'Book list'
     puts 'No books added yet' if @books.empty?
     @books.each { |book| puts("Title: #{book.title} - Author: #{book.author}") }
-    init
   end
 
   def list_people
     puts 'People list'
     puts 'No people added yet' if @people.empty?
     @people.each { |person| puts person.name }
-    init
   end
 
   def create_person
@@ -82,7 +50,6 @@ class App
     parent_permission = parent_permission?
     @people.push(Student.new(age, classroom, name, parent_permission: parent_permission))
     puts 'Student created'
-    init
   end
 
   def parent_permission?
@@ -105,7 +72,6 @@ class App
     specialization = gets.chomp
     @people.push(Teacher.new(age, specialization, name))
     puts 'Teacher created'
-    init
   end
 
   def create_book
@@ -115,7 +81,6 @@ class App
     input_author = gets.chomp
     @books.push(Book.new(input_title, input_author))
     puts 'Book Created'
-    init
   end
 
   def create_rental
@@ -135,7 +100,6 @@ class App
     date = gets.chomp
     @rentals.push(Rental.new(person, book, date))
     puts 'OMG you rented a book!'
-    init
   end
 
   def list_rentals
@@ -148,13 +112,9 @@ class App
     selected_rentals.each do |rental|
       puts "Name: #{rental.person.name}, Book: #{rental.book.title} - #{rental.book.author}, Date: #{rental.date}"
     end
-    init
   end
 
   def quit_app
     p 'Thanks for usig School Library App, Bye'
   end
 end
-
-# rubocop:enable Metrics/CyclomaticComplexity
-# rentals.person.id
