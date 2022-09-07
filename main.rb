@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/CyclomaticComplexity
 require_relative './app'
 def init
   puts "Please choose an option by entering a number:
@@ -50,3 +51,4 @@ def main
 end
 
 main
+# rubocop:enable Metrics/CyclomaticComplexity

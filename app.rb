@@ -118,5 +118,3 @@ class App
     p 'Thanks for usig School Library App, Bye'
   end
 end
-
-# rentals.person.id
