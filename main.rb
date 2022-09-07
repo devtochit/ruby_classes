@@ -51,7 +51,4 @@ def main
 end
 
 main
-<<<<<<< HEAD
 # rubocop:enable Metrics/CyclomaticComplexity
-=======
->>>>>>> f2287766fcccd984e547f05bb8699ce9c49b346b
