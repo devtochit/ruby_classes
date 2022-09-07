@@ -1,6 +1,5 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 require_relative './app'
-
 def init
   puts "Please choose an option by entering a number:
         1 - List all books
@@ -52,4 +51,7 @@ def main
 end
 
 main
+<<<<<<< HEAD
 # rubocop:enable Metrics/CyclomaticComplexity
+=======
+>>>>>>> f2287766fcccd984e547f05bb8699ce9c49b346b
