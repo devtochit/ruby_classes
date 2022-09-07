@@ -25,6 +25,7 @@ $ irb
 ## Authors
 
 👤 **Jesse Uzoma**
+
 👤 **Brenda Wihogora**
 
 - GitHub: [@HedevedUp](https://github.com/HeDevedUp/ruby_classes/)
