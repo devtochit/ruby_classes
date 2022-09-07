@@ -1,31 +1,42 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# School Library
+# School libray 
 
-> A ruby App that models a School Library.
+Imagine a librarian at example University, and need a tool to record what books are in the library and who borrows them. The app that I created can allow the librarian to:
+
+- Add new students or teachers.
+- Add new books.
+- Save records of who borrowed a given book and when.
+
+And all of these are built in a beautiful and well-organized way!
 
 ## Built With
 
-- **Languages & Technologies:**
-  - Ruby
+- Ruby
 
-   ### Clone this repository
+## Getting Started
+Clone this repository 
 
-```bash
-$ git clone git@github.com:HeDevedUp/OOP-School-Library.git
-$ cd OOP-School-Library
-```
+    $ git@github.com:NduatiKagiri/school_library.git
+    $ cd school_library
 
-### Run project
+## Run Project
+    $ Kali Rolling WSL
 
-```command prompt - irb
-$ irb
-```
+### Install
+    $ rbenv install 3.0.1
+    $ rbenv global 3.0.1
+    $ ruby -v
 
 ## Authors
 
-👤 **Jesse Uzoma **
+👤 **Brenda Wihogora**
 
+- GitHub: [@Brenda309](https://github.com/Brenda309)
+- Twitter: [@BrendaWihogora](https://twitter.com/BrendaWihogora)
+- LinkedIn: [BrendaWihogora](https://linkedin.com/in/BrendaWihogora/)
+
+👤 **Jesse**
 - GitHub: [@HedevedUp](https://github.com/HeDevedUp)
 - Twitter: [devtochi](https://twitter.com/devtochi)
 - LinkedIn: [uzoma ](https://linkedin.com/in/jeuzoma/)
