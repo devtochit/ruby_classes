@@ -12,6 +12,9 @@ module PreserveData
         data.person.age, data.person.name,
         data.person.parent_permission]
         rental_book = [data.book.title,data.book.author]
+        rental_data = [data.date, rental_book, rental_person]
+        rental_json = JSON.generate(rental_data)
+        File.write('data/rentals.json', "{rental_json", mode:a)
         end
     end
     
