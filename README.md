@@ -30,14 +30,10 @@ Clone this repository
 
 ## Authors
 
+👤 **Jesse Uzoma**
 👤 **Brenda Wihogora**
 
-- GitHub: [@Brenda309](https://github.com/Brenda309)
-- Twitter: [@BrendaWihogora](https://twitter.com/BrendaWihogora)
-- LinkedIn: [BrendaWihogora](https://linkedin.com/in/BrendaWihogora/)
-
-👤 **Jesse**
-- GitHub: [@HedevedUp](https://github.com/HeDevedUp)
+- GitHub: [@HedevedUp](https://github.com/HeDevedUp/ruby_classes/)
 - Twitter: [devtochi](https://twitter.com/devtochi)
 - LinkedIn: [uzoma ](https://linkedin.com/in/jeuzoma/)
 
