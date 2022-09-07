@@ -1,6 +1,8 @@
+# rubocop:disable Metrics/CyclomaticComplexity
 require_relative './app'
-  def init
-    puts "Please choose an option by entering a number:
+
+def init
+  puts "Please choose an option by entering a number:
         1 - List all books
         2 - List all people
         3 - Create a person
@@ -10,34 +12,34 @@ require_relative './app'
         7 - Exit
 
       Enter your option here:"
-  end
+end
 
- def run_option(option, app)
-    case option
-    when 1 
-      then app.list_books
-    when 2 
-      then app.list_people
-    when 3 
-      then app.create_person
-    when 4 
-      then app.create_book
-    when 5 
-      then app.create_rental
-    when 6 
-      then app.list_rentals
-    when 7 
-      then app.quit_app
-    else p 'Please enter a valid option, number from 1 to 7'
-    end
+def run_option(option, app)
+  case option
+  when 1
+    app.list_books
+  when 2
+    app.list_people
+  when 3
+    app.create_person
+  when 4
+    app.create_book
+  when 5
+    app.create_rental
+  when 6
+    app.list_rentals
+  when 7
+    app.quit_app
+  else p 'Please enter a valid option, number from 1 to 7'
   end
+end
 
 def main
   app = App.new
   option = 0
   puts 'Welcome to School Library Rental App!'
   while option != 7
-  init
+    init
     option = gets.chomp.to_i
     if option.positive? && option < 7
       run_option(option, app)
@@ -50,3 +52,4 @@ def main
 end
 
 main
+# rubocop:enable Metrics/CyclomaticComplexity

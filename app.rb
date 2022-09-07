@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/CyclomaticComplexity
-
 require './book'
 require './person'
 require './rental'
@@ -74,7 +72,6 @@ class App
     specialization = gets.chomp
     @people.push(Teacher.new(age, specialization, name))
     puts 'Teacher created'
- 
   end
 
   def create_book
@@ -121,6 +118,3 @@ class App
     p 'Thanks for usig School Library App, Bye'
   end
 end
-
-# rubocop:enable Metrics/CyclomaticComplexity
-# rentals.person.id
