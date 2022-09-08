@@ -11,3 +11,9 @@ p mairy = Student.new(207, 20, 'Mairy Rilery')
 
 p class619 = Classroom.new(101)
 p class619.students
+
+p jese.classroom
+p class619.add_student(jesse)
+p jesse.classroom
+p jesse.classroom.label
+p class619.students
