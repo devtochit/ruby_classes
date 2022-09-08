@@ -1,7 +1,6 @@
 require './classroom'
 
 describe Classroom do
-
   context 'When testing Classroom class' do
     before :each do
       @classroom = Classroom.new('Math')
