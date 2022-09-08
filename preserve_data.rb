@@ -4,7 +4,6 @@ require './teacher'
 require './book'
 
 module PreserveData
-
   def save_rental(rental_list)
     File.open('data/rentals.json', mode: 'w')
     rental_list.each do |data|
@@ -14,7 +13,6 @@ module PreserveData
       rental_json = JSON.generate(rental_data)
       File.write('data/rentals.json', "#{rental_json}\n", mode: 'a')
     end
-    
   end
 
   def save_persons(persons_list)
@@ -83,8 +81,4 @@ module PreserveData
     end
     rental_list
   end
-
-
-
-  
 end
