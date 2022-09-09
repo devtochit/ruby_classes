@@ -1,120 +1,76 @@
-require './book'
-require './person'
-require './rental'
-require './student'
-require './teacher'
-
-class App
-  attr_reader :books, :people, :rentals
-
-  def initialize
-    @books = []
-    @people = []
-    @rentals = []
-  end
-
-  puts 'Welcome to School Library App!'
-
-  def list_books
-    puts 'Book list'
-    puts 'No books added yet' if @books.empty?
-    @books.each { |book| puts("Title: #{book.title} - Author: #{book.author}") }
-  end
-
-  def list_people
-    puts 'People list'
-    puts 'No people added yet' if @people.empty?
-    @people.each { |person| puts person.name }
-  end
-
-  def create_person
-    puts 'Are you a:
-    1 - Student
-    2 - Teacher'
-    person_input = gets.chomp.to_i
-    case person_input
-    when 1 then create_student
-    when 2 then create_teacher
-    else p 'Please enter a valid option, number 1 or 2'
-         create_person
+module App
+  def list_of_books(books_list)
+    puts 'List of Books:'
+    if books_list.empty?
+      puts '---------------------------------------------'
+      puts 'The Book\'s list is empty'
+      puts '---------------------------------------------'
+    else
+      books_list.map do |book|
+        puts '---------------------------------------------'
+        puts "Title: #{book.title} - Author: #{book.author}"
+        puts '---------------------------------------------'
+      end
     end
   end
 
-  def create_student
-    puts 'Enter your name'
-    name = gets.chomp
-    puts 'Enter your age'
-    age = gets.chomp.to_i
-    puts 'Enter classroom'
-    classroom = gets.chomp
-    parent_permission = parent_permission?
-    @people.push(Student.new(age, classroom, name, parent_permission: parent_permission))
-    puts 'Student created'
-  end
-
-  def parent_permission?
-    puts 'Do you have parent permission? Y/N'
-    parent_permission = gets.chomp.upcase
-    case parent_permission
-    when 'Y' then true
-    when 'N' then false
-    else p 'Enter a valid value: Y or N'
-         parent_permission?
+  def list_of_people(people_list)
+    puts 'List of Persons:'
+    if people_list.empty?
+      puts '---------------------------------------------'
+      puts 'People\'s list is empty'
+      puts '---------------------------------------------'
+    else
+      people_list.map do |person|
+        puts '---------------------------------------------'
+        puts "Name: #{person.name} - ID: #{person.id} - Age: #{person.age}"
+        puts '---------------------------------------------'
+      end
     end
   end
 
-  def create_teacher
-    puts 'Enter your name'
-    name = gets.chomp
-    puts 'Enter your age'
-    age = gets.chomp.to_i
-    puts 'Enter your specialization'
-    specialization = gets.chomp
-    @people.push(Teacher.new(age, specialization, name))
-    puts 'Teacher created'
-  end
-
-  def create_book
-    puts 'Write book\'s title'
-    input_title = gets.chomp
-    puts 'Write book\'s author'
-    input_author = gets.chomp
-    @books.push(Book.new(input_title, input_author))
-    puts 'Book Created'
-  end
-
-  def create_rental
-    puts 'Select a book by its number'
-    @books.each_with_index do |book, index|
-      puts "Number: #{index} - Title: #{book.title}, Author: #{book.author}"
-    end
-    book_id_input = gets.chomp.to_i
-    book = @books[book_id_input]
-    puts 'Select the person who is renting a book by its number (not ID)'
-    @people.each_with_index do |person, index|
-      puts "Number: #{index} - Role: #{person.class.name}, name: #{person.name}, ID: #{person.id}"
-    end
-    person_id_input = gets.chomp.to_i
-    person = @people[person_id_input]
-    puts 'Enter date [yyyy-mm-dd]'
-    date = gets.chomp
-    @rentals.push(Rental.new(person, book, date))
-    puts 'OMG you rented a book!'
-  end
-
-  def list_rentals
-    puts 'No rentals yet' if @rentals.empty?
-    puts 'Enter a person ID'
-    person_id_input = gets.chomp
-    selected_person = @people.find { |person| person.id == person_id_input }
-    puts 'This person has no rentals yet' if selected_person.rentals.empty?
-    selected_rentals = selected_person.rentals
-    selected_rentals.each do |rental|
-      puts "Name: #{rental.person.name}, Book: #{rental.book.title} - #{rental.book.author}, Date: #{rental.date}"
+  def list_of_rentals(rental_list)
+    if rental_list.empty?
+      puts '---------------------------------------------'
+      puts 'The Rental\'s list is empty'
+      puts '---------------------------------------------'
+    else
+      rental_list.map do |rent|
+        puts '---------------------------------------------'
+        puts "Date: #{date} - Book: #{rent.book.title} - Name: #{rent.person.name}"
+        puts '---------------------------------------------'
+      end
     end
   end
 
-  def quit_app
-    p 'Thanks for usig School Library App, Bye'
+  def filter_by_id(rental_list, name)
+    rental_list.each do |rent|
+      next if rent.person.name != name
+
+      puts '---------------------------------------------'
+      puts "Date: #{rent.date}"
+      puts "Rented to: #{rent.person.name}"
+      puts "Title: #{rent.book.title}"
+      puts "Author: #{rent.book.author}"
+      puts '---------------------------------------------'
+    end
+  end
+
+  def add_person_list(people_list, person)
+    people_list.push(person)
+  end
+
+  def add_book_list(books_list, book)
+    books_list.push(book)
+    puts '---------------------------------------------'
+    puts 'The Book was created successfully!'
+    puts '---------------------------------------------'
+  end
+
+  def add_rental_list(rental_list, rent)
+    rental_list.push(rent)
+    puts '---------------------------------------------'
+    puts 'The Rental was created successfully!'
+    puts '---------------------------------------------'
   end
 end
